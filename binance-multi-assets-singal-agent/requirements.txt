@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-binance
+pandas
+pandas-ta
+numpy==1.26.4
+python-dotenv
+websockets
+python-multipart 
