@@ -1,5 +1,5 @@
 # National-CN-Bond-Weighted-Interest-Rate-Forecast
-Weighted Interest Rate Prediction of Bonds Based on Transformer Core Technologies: Transformer Encoder, PyTorch, R², RMSE, Permutation Importance
+A bond interest rate forecasting demo built with Transformer Encoder and PyTorch, with evaluation metrics including R² and RMSE, plus permutation importance analysis.
 
 ## Model Results
 
