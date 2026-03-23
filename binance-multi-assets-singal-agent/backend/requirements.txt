@@ -3,7 +3,7 @@ uvicorn[standard]
 python-binance
 pandas
 pandas-ta
-numpy==1.26.4
+numpy==2.4.3
 python-dotenv
 websockets
 python-multipart 
