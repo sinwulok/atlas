@@ -1,0 +1,37 @@
+% ------------ ------------ ------------ ------------
+% Resume in Latex
+% Author: Maximilian (S.W.) LOK
+% Based templates on Github | Overleaf
+% 1. https://github.com/sb2nov/resume
+% 2. https://github.com/jakegut/resume
+% 3. Templates of Matty Doe's (Overleaf)
+% License: MIT & CC by 4.0
+% First edition: Sep 2024
+% Latest Update: Jan 2026
+% ------------ ------------ ------------ ------------
+% !TeX program = xelatex | lualatex
+\documentclass[UTF8]{ctexart} % UTF8 and process with cn/zh
+\setCJKmainfont{Noto Sans CJK TC} % Avoid garbled characters
+%
+% ------------ PACKAGE OF ROOT ------------
+\input{packages/roots} % roots and configs
+% ------------ PACKAGE OF STYLE ------------
+\input{packages/styles} % layout and styles
+% ------------ PACKAGE OF ATBEGINDOCUMENT ------------
+\input{packages/adb} % atbegindocument settings
+% ------------ #BEGIN OF DOCUMENT ------------
+%
+\begin{document}
+\input{sections/heading}
+\section{Education}\input{sections/education}
+\section{Experience}\input{sections/experience}
+\section{Projects}\input{sections/projects}
+\section{Tenical Stack}\input{sections/techstack}
+\section{Qualifications}\input{sections/footer}
+%
+% -------------------- PAGE END  --------------------
+\vspace{-10pt} % Adjust vertical space after the two column environment
+% 
+% Continue with others
+% \input{debug_grid.tex} % Removed for final version
+\end{document}

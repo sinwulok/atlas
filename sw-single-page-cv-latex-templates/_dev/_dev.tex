@@ -1,0 +1,122 @@
+% ------------ ------------ ------------ ------------
+% Resume in Latex
+% Author: Maximilian Raku Lok
+% Based off of templates: 
+% 1. https://github.com/sb2nov/resume
+% 2. https://github.com/jakegut/resume
+% 3. Templates of Matty Doe's (Overleaf)
+% License: MIT & CC by 4.0
+% Last updated: April 2025
+% ------------ ------------ ------------ ------------
+
+% ------------ ------------ ------------ ------------
+% !TeX program = xelatex
+\documentclass[UTF8]{ctexart} % UTF8 for Chinese support
+
+% ------------ PACKAGE OF ROOT ------------
+\input{packs_root} % packs_root.tex
+% ------------ PACKAGE OF STYLE ------------
+\input{packs_style} % packs_style.tex
+% ------------ PACKAGE OF ATBEGINDOCUMENT ------------
+\input{packs_abd} % packs_abd.tex
+% ------------------------ ------------------------
+
+% ------------ #BEGIN OF DOCUMENT ------------
+
+\begin{document}
+
+% ------------ HEADING ------------
+\begin{center}
+    \textbf{\Huge \scshape KA HOU \raisebox{-0.2ex}{Maximilian Lok}} \\
+    \vspace{6pt}
+    \small
+    \faIcon{envelope} \href{mailto:maximilian.lok.mo@gmail.com}{\underline{maximilian.lok.mo@gmail.com}} \quad
+    \faIcon{linkedin} \href{https://www.linkedin.com/in/maximilianlok}{\underline{LinkedIn Profile}} \quad
+    \faIcon{github} \href{https://github.com/BiuwuLOK}{\underline{GitHub Profile}}
+\end{center}
+
+% -------------------- SKILLS --------------------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt]
+    \small{\item{
+        \textbf{Languages (Proficient):} Python, JavaScript/TypeScript, SQL, \LaTeX \\
+        \textbf{Languages (Intermediate):} PHP, Rust, Shell, Bash, HTML/CSS \\
+        \vspace{2pt}
+        \textbf{Frameworks (Proficient):} FastAPI, Django, NextJS, Scikit-Learn \\
+        \textbf{Frameworks (Intermediate):} TensorFlow, Laravel \\
+        \vspace{2pt}
+        \textbf{Platforms/Tools:} Google Cloud Platform, GitHub, Docker, Linux, Ollama, RAGflow, Git \\
+        \vspace{2pt}
+        \textbf{AI Services:} OpenAI, DeepSeek, Anthropic
+    }}
+\end{itemize}
+
+% -------------------- PROJECTS --------------------
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeProjectHeading
+        {\textbf{SiuBiu AI Quant System} $|$ \href{https://github.com/BiuwuLOK/SIUBIU-AI-QUANT-SYSTEM}{\underline{GitHub}} \footnotesize\emph{Python, FastAPI, yfinance, Scikit-Learn, Pandas}}{2024 -- Present}
+        \resumeItemListStart
+            \resumeItem{Built a multi-agent quantitative trading system with real-time market data integration via yfinance and a FastAPI interface.}
+            \resumeItem{Implemented trading signals, risk management with volatility and Sharpe ratio analysis, and simulated portfolio execution.}
+            \resumeItem{Designed RESTful API endpoints for system control, data retrieval, and performance monitoring.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Binance Testnet Crypto Trading Bot} $|$ \href{https://github.com/BiuwuLOK/binance-assets-agent-macd}{\underline{GitHub}} \footnotesize\emph{Python, Binance API, Pandas}}{Nov 2024 -- Jan 2025}
+        \resumeItemListStart
+            \resumeItem{Developed a multi-asset crypto trading bot leveraging price change signals and technical indicators.}
+            \resumeItem{Enabled scheduled execution and real-time monitoring on Binance Testnet for robust trading operations.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Macau Wine Shop E-Commerce} $|$ \href{https://macauwineshop.com}{\underline{Website}} \footnotesize\emph{Bootstrap, PHP, MySQL, Docker}}{2021 -- 2023}
+        \resumeItemListStart
+            \resumeItem{Designed and maintained a scalable full-stack e-commerce platform with enhanced user engagement features.}
+            \resumeItem{Integrated promotional tools and event management systems to boost customer interaction and sales.}
+        \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% -------------------- EXPERIENCE --------------------
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading
+        {E-Commerce Specialist}{Nov 2024 -- Mar 2025}
+        {Hei Mao Cross-Border}{Remote, China}
+        \resumeItemListStart
+            \resumeItem{Streamlined cross-border operations (China/SEA) by optimizing ERP workflows for platforms like Shopee, Lazada, and 1688.}
+            \resumeItem{Developed AI-driven automation tools to enhance backend system efficiency and management.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+        {Management of Information System Executive}{2021 -- 2023}
+        {Seapower Trading Co. Ltd.}{Macau}
+        \resumeItemListStart
+            \resumeItem{Led development and maintenance of e-commerce platforms, ERP-based tools, and internal web applications.}
+            \resumeItem{Managed enterprise servers (Windows ESXi, Active Directory, Ubuntu) with Docker-based deployments.}
+        \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% -------------------- EDUCATION --------------------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+        {City University of Macau}{2019 -- 2021}
+        {Master of Data Science}{GPA: 3.89/4.0}
+\resumeSubHeadingListEnd
+
+% -------------------- CERTIFICATIONS --------------------
+\section{Certifications}
+\resumeSubHeadingListStart
+    \resumeSubheading
+        {Microsoft Certificate of Completion}{Apr 2025}
+        {Career Essentials in Generative AI by Microsoft and LinkedIn $|$ \href{https://bit.ly/3xyz123}{\underline{Credential}}}{}
+    \resumeSubheading
+        {Association for Computing Machinery}{Jun 2023}
+        {Associated Professional Membership $|$ \href{https://bit.ly/4aBcDeF}{\underline{Credential}}}{}
+    \resumeSubheading
+        {Microsoft Partner}{Aug 2019}
+        {MCSA: Administering a SQL Database Infrastructure $|$ \href{https://bit.ly/3zYxWvN}{\underline{Credential}}}{}
+\resumeSubHeadingListEnd
+
+\end{document}

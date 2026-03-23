@@ -1,0 +1,29 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# PDF build artifacts (可選：如果你想保留 cv.pdf 就不要忽略)
+*.pdf
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp

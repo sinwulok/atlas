@@ -1,0 +1,16 @@
+% ------------ AT BEGIN DOCUMENT PACKAGES ------------
+% \AtBeginDocument functional packs
+% This packs is for ensure certain actions performed
+% (ex. custom Commands apply to certain parts, page style, etc.)
+% That before the document's content is processed.
+% This packs also avoid some unexpected compile error.
+% (ex. switch between Overleaf with VScode etc.)
+
+\AtBeginDocument{
+    % ------------ CUSTOM PAGE MARGIN ------------
+    % \raggedbottom % flexible bottom margin + not stretch text fill page % height
+    % \raggedright  % flexible margin left + but leave right margin ragged
+    % \setlength{\tabcolsep}{0in}  % Set table column separation to 0
+    % ------------ 
+    \urlstyle{same} % set url links same fonts with content text
+} 

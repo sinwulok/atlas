@@ -1,0 +1,179 @@
+
+% ------------ HEADER AND FOOTER STYLES ------------
+\usepackage{fancyhdr} 
+\pagestyle{fancy} % Activates the custom header and footer settings
+
+\fancyhf{} % Clear default header and footer styles
+% \setlength{\footskip}{10pt} % A more generous value
+
+% ------------ CUSTOM SETTINGS ------------
+% By default fancyhdr often includes a thin line
+% Sets the width of the horizontal rule (line) 
+% below the header to 0 points (i.e., no line).
+\renewcommand{\headrulewidth}{0pt} % removes header line/underline
+\renewcommand{\footrulewidth}{0pt} % Same with headrulewidth
+
+% ------------ MARGIN ADJUSTMENTS ------------
+\addtolength{\oddsidemargin}{-0.5in}  % remove printing margin
+\addtolength{\evensidemargin}{-0.5in} % remove printing margin 
+\addtolength{\topmargin}{-0.5in}      % 
+\addtolength{\textwidth}{1.0in}       % text area max width align print wide
+\addtolength{\textheight}{1.0in}      % text area align print height
+
+% ------------ CUSTOM SECTION STYLE ------------
+% Main section formatting %
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+ 
+% Subsection formatting %
+\titleformat{\subsection}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+% Define a contact icon with 3 arguments: icon name, link, display text
+\newcommand{\contactRow}[3]{%
+  \faIcon{#1}~\href{#2}{\underline{#3}}\hspace{5pt}%
+  }
+
+% -------------------- CUSTOM ITEMIZE COMMANDS --------------------
+% 1. 定義新的列表環境名稱 (如果需要，以便獨立控制)
+\newlist{resumesubheadings}{itemize}{1} % 用於包裹 Experience/Education/Project 的列表
+\newlist{resumeitems}{itemize}{1}       % 用於包裹具體描述 (子彈點) 的列表
+
+% 2. 統一設定列表環境樣式
+% 設置主要列表 (resumesubheadings): 用於 Experience/Education/Project
+% 您的需求: leftmargin=0in, label={}
+\setlist[resumesubheadings]{
+    label={},             % 無項目符號
+    leftmargin=0pt,       % 左邊距為 0
+    itemsep=5pt,          % 項目之間間距 (沿用原註釋代碼，或根據需要調整)
+    topsep=2pt,           % 列表頂部間距 (沿用原註釋代碼，或根據需要調整)
+    parsep=2pt,           % 段落間距為 0
+    %partopsep=0pt         % 列表前後間距為 0
+}
+
+% 設置項目列表 (resumeitems): 用於具體描述 (子彈點)
+% 您的需求: leftmargin=0.2in (約 1.5em), 且 \resumeItemListEnd 有 \vspace{-5pt}
+\setlist[resumeitems]{
+    label=\textbullet,    % 標準圓點 (或使用 \label=\tiny{$\bullet$} 讓圓點更小)
+    leftmargin=0.2in,     % 您的客製化邊距
+    itemsep=0pt,          % 項目之間間距 (沿用原註釋代碼，或根據需要調整)
+    topsep=2pt,           % 列表頂部間距為 0
+    %parsep=0pt,           % 段落間距為 0
+    %partopsep=0pt         % 列表前後間距為 0
+}
+
+% 3. 將宏命令導向新的環境
+% -------------------- CUSTOM SUBJECTS COMMANDS --------------------
+% Define commands for starting and ending a list of subheadings %
+\newcommand{\resumeSubHeadingListStart}{\begin{resumesubheadings}}
+\newcommand{\resumeSubHeadingListEnd}{\end{resumesubheadings}}
+
+% Define commands for starting and ending a list of items %
+% 注意: \vspace{-5pt} 必須放在宏命令外部，不能放在 \setlist 內，所以它保留在 \newcommand 裡
+\newcommand{\resumeItemListStart}{\begin{resumeitems}}
+\newcommand{\resumeItemListEnd}{\end{resumeitems}\vspace{-5pt}}
+
+% Redefine the label for second level of itemize %
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$} 
+
+% Define a custom command for a resume item %
+% 注意: resumeItem 內部的 \vspace{-2pt} 屬於內容級間距，可以保留
+\newcommand{\resumeItem}[1]{% Add vspace for each items
+  \item\small{ {#1 \vspace{-2pt}} } %
+}
+
+% Define a custom command for a resume sub-item %
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+% -------------------- CUSTOM COMMANDS OF ALL HEADINGS (優化版) --------------------
+% 輔助命令: 處理所有 Resume/CV 條目的通用排版設置
+% 參數 #1: 表格內容 (即所有 \textbf, \textit, \\)
+% 參數 #2: 項目開頭的垂直間距 (例如: -2pt)
+% 參數 #3: 項目結尾的垂直間距 (例如: -7pt)
+% 參數 #4: 是否強制在開頭使用 \item (通常為 true，除非特殊需求)
+\newcommand{\makeResumeEntry}[4]{%
+    \ifstrequal{#4}{true}{\item}{}% % 檢查是否需要 \item
+    \vspace{#2}% % 應用項目開頭的垂直間距 (如 -2pt)
+    
+    % 1. 確保表格內容從最左側開始 (無列間距)
+    \setlength{\tabcolsep}{0pt}%
+    \setlength{\arraycolsep}{0pt}%
+    
+    % 2. 創建全寬度表格
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        #1 % 表格內容 (由主命令提供，包含所有 \textbf, \textit, \\)
+    \end{tabular*}%
+    
+    % 3. 重置間距到預設值
+    \setlength{\tabcolsep}{6pt}%
+    \setlength{\arraycolsep}{5pt}%
+    
+    % 4. 結尾垂直間距
+    \vspace{#3}% % 應用項目結尾的垂直間距 (如 -7pt)
+}
+
+% -------------------- EDUCATION --------------------
+% Define a custom command for a compact education heading with 2 arguments %
+\newcommand{\educationHeading}[2]{ %
+    \makeResumeEntry{%
+        {#1} & \textit{#2} \\ % 左: 學校 + 學位, 右: 日期
+    }{-2pt}{-7pt}{true}%
+}
+
+% -------------------- PROJECTS --------------------
+% Define a custom command for a resume project heading with 2 arguments %
+\newcommand{\resumeProjectHeading}[2]{ %
+    \makeResumeEntry{%
+        \small{#1} & \textit{#2} \\ % 項目名稱/技術棧 & 日期/網址
+    }{-1pt}{-5pt}{true}% % 開頭無 \vspace，直接從 \item 開始
+}
+
+% -------------------- EXPERIENCE / CERTIFICATIONS --------------------
+% Define a custom command for a resume sub-subheading with 2 arguments (CERTIFICATION/GPA) %
+% 注意: 這裡不能使用 \textwidth，因為 \resumeSubSubheading 預設使用的是 0.97\textwidth
+\newcommand{\resumeSubSubheading}[2]{ %
+    \item % 這裡保留 \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r} % 需要保留 0.97\textwidth
+        \textit{\small#1} & \textit{\small #2} \\ % Italic sub-subheading and right-aligned info
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Define a custom command for a resume subheading with 4 arguments (單公司) %
+\newcommand{\resumeSubheading}[4]{ %
+    \makeResumeEntry{%
+        \textbf{#1} & \textit{#2} \\[-0.2em] % <-- 職位/日期 (加入收緊間距)
+        \textit{\small#3} & \textit{\small #4} \\ % <-- 公司/地點
+    }{0pt}{0pt}{true}%
+}
+
+% Define a custom command for a resume subheading with multiple companies (6 arguments) %
+\newcommand{\resumeMultiCompanySubheading}[6]{ %
+    \makeResumeEntry{%
+        \textbf{#1} & \textit{#2} \\[-0.2em] % <-- 職位/日期 (加入收緊間距)
+        \textit{\small#3} & \textit{\small #4} \\[-0.5em] % <-- 第一家公司
+        \textit{\small#5} & \textit{\small #6} \\ % <-- 第二家公司
+    }{0pt}{-5pt}{true}%
+}
+
+% -------------------- TECHNICAL-STACK --------------------
+% Define new enviroment - tech stack
+\newenvironment{techstack}{%
+    \begin{itemize}[
+        leftmargin=1.7in,
+        labelwidth=1.65in,
+        labelsep=0.05in,
+        align=left,
+        itemsep=2pt,
+        parsep=2pt,
+        topsep=-2pt
+    ]
+    \small
+    }{
+    \end{itemize}
+}
+% Command to define title + content for - tech stack
+\newcommand{\skillitem}[2]{%
+    \item[\textbf{#1}] #2
+}
