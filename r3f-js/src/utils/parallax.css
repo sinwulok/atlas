@@ -1,0 +1,9 @@
+.parallax {
+  transform-style: preserve-3d;
+}
+
+.parallax .para-context {
+  font-style: italic;
+  color: white;
+  transform: translateZ(500px);
+}

@@ -1,0 +1,28 @@
+# Readme
+
+## About H.O.C
+
+# Higher-Order Components (HOCs)
+
+`H.O.C`s stands for `Higher-Order Component`
+
+- In React are functions that take a component and return a new component with additional properties.
+
+- **Benefits**: Reusability, handling cross-cutting concerns, and enhancing functionality.
+
+- `HOC` pattern is the instance usage of `H.O.F` **Higher-Order Functions (H.O.F)**
+
+# Higher-Order Functions (HOFs)
+
+`HOF`s are functions that can take other functions as arguments or return them as results.
+
+- **Usage**: Transforming arrays, handling asynchronous operations, composing functions.
+
+## Relation between HOCs and HOFs:
+
+- Both `HOC`s and `HOF`s are based on the concept of **higher-order programming**, which involves using functions as first-class citizens
+  -- meaning functions can be passed as arguments to other functions, returned as values from other functions, or assigned to variables.
+
+- `HOF`s are used extensively in functional programming languages and paradigms, where functions are the primary means of abstraction and code reuse.
+
+- `HOC`s are a specific application of the `HOF` concept in the context of `React components`. They are functions that take a component and \*return a new component, there by extending or modifying its behavior.
