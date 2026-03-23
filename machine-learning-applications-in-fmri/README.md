@@ -12,9 +12,9 @@ Please note: This project is intended solely for educational and personal study 
 
 ## Research result of ROI
 
-![result_1](assets/images/group-ica%20with%20dictlearn-01.png)
-![result_2](assets/images/group-ica%20with%20dictlearn-02.png)
-![result_3](assets/images/group-ica%20with%20dictlearn-03.png)
+![result_1](assets/images/group-icawithdictlearn-01.png)
+![result_2](assets/images/group-icawithdictlearn-02.png)
+![result_3](assets/images/group-icawithdictlearn-03.png)
 
 ## Research result of compair
 
