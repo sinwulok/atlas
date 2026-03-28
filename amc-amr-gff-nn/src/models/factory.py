@@ -1,22 +1,23 @@
 import torch
-from .backbones.mcl_dnn import MCLDNN
-from .backbones.sa_cnn import SACNN
-from .backbones.iq_former import IQFormer
-from .gated_fusion import GatedFusionFormer
+from .cnn2 import CNN2
+from .mod_rec_net import ModRecNet
+from .model import GatedFusionFormer
 
-def build_model(model_name, config):
+
+def build_model(model_name: str, config: dict):
     """
-    輸入模型名稱與配置，回傳統一接口的模型物件。
-    確保輸出均為 (Batch, Num_Classes)
+    Create and return a model instance by name.
+
+    Supported names (case-insensitive): 'cnn2', 'modrecnet', 'gff_v3'
     """
     registry = {
-        'mcl_dnn': MCLDNN,
-        'sa_cnn': SACNN,
-        'iq_former': IQFormer,
-        'gff_v3': GatedFusionFormer
+        'cnn2': CNN2,
+        'modrecnet': ModRecNet,
+        'gffnn': GFFNN,
     }
-    
-    if model_name not in registry:
-        raise ValueError(f"實驗模型 [{model_name}] 不在註冊表中。")
-        
-    return registry[model_name](**config)
+
+    key = model_name.lower()
+    if key not in registry:
+        raise ValueError(f"Model [{model_name}] not registered. Available: {list(registry.keys())}")
+
+    return registry[key](**config)

@@ -7,18 +7,31 @@
 ## 目錄結構
 
 ```
-gff_project/
-├── configs/               # ⚙️ 實驗配置 (YAML) - 存放 4 個模型的超參數
-├── models/                # 🧠 模型庫
-│   ├── backbones/         # 特徵提取器 (MCLDNN, SA-CNN, IQFormer)
-│   ├── factory.py         # 🏭 模型工廠 (一鍵生成指定模型)
-│   └── gated_fusion.py    # 💎 你的核心研究：GatedFusionFormer
-├── core/                  # 🛠️ 核心引擎
-│   ├── dataset.py         # 多模態轉換 (IQ/STFT/STD) 與 Data Loader
-│   ├── trainer.py         # 統一的訓練與驗證循環
-│   └── analyzer.py        # 深度診斷 (SNR-Acc, Confusion Matrix)
-├── run.py                 # 🚀 唯一入口 (支持交互式中斷與實驗選擇)
-└── utils.py               # 🧰 輔助工具 (Plotting, Logger, Profiler)
+amc-amr-gff-nn/
+├── assets/
+│   ├── INDEX.md
+|   ...
+├── src/
+│   ├── export.py
+│   ├── run.py
+│   ├── utils.py
+│   ├── configs/
+│   │   └── config.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── dataset.py
+│   │   ├── 01_evaluate.py
+│   │   ├── 02_deep_analysis.py
+│   │   ├── 03_ablation.py
+│   │   ├── 04_gating_weights.py
+│   │   └── 05_cnn_vs_transformer.py
+│   └── models/
+│       ├── factory.py
+│       ├── cnn2.py
+│       ├── mod_rec_net.py
+│       ├── model.py
+│       └── gff_nn.py
+├── README.md
 ```
 
 ---
