@@ -1,5 +1,8 @@
 name: Update README Project Overview # v3
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: ["main"]
