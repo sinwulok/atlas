@@ -115,8 +115,8 @@ python src/run.py deep_analysis --weights model.pth --data RML2016.10a_dict.pkl
 - `confused_categories_high_snr.png` — 高 SNR 易混淆類別柱狀圖
 - `tsne_visualization.png` — t-SNE 特徵空間可視化（低 / 高 SNR）
 
-![per_class_acc_vs_snr](assets/acc_vs_snr_type_all.png)
-
+![per_class_acc_vs_snr](assets/per_class_acc_vs_snr.png)
+![tsne_visualization](assets/tsne_visualization.png)
 ---
 
 ### `ablation.py` — 模態消融實驗
@@ -130,7 +130,9 @@ python src/run.py ablation --weights model.pth --data RML2016.10a_dict.pkl
 - `ablation_pairwise_modality.png` — 成對模態消融 Accuracy vs SNR
 - `ablation_confused_categories.png` — 高 SNR 易混淆類別對比
 
-![]
+![ablation_single_modality](assets/ablation_single_modality.png)
+![ablation_pairwise_modality](assets/ablation_pairwise_modality.png)
+
 
 ---
 
