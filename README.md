@@ -1,5 +1,5 @@
 ### ⚠️ 注意 / Caution — 請先確認存取權與用途 (請閱讀下面方法說明再執行) ⚠️
-
+### ⚠️ Please confirm access rights and purpose first (please read the instructions below before proceeding). ⚠️
 # How to download each folder only / 只下載單一資料夾
 
 > If you only need a single folder from this monorepo (for example `amc-amr-gff-nn`) there are several simple ways to do that without downloading the entire repository.
