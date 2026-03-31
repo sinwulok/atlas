@@ -1,4 +1,4 @@
-# GFF Experiments — GatedFusionFormer 實驗套件
+# GatedFusionFormer NeuralNetwork 模組化套件
 
 > **說明**：原始 `AMR_GateFusionFormer_v8_clean.ipynb`（64 cells）Productionization
 
