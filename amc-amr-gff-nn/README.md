@@ -1,6 +1,7 @@
 # GFF Experiments — GatedFusionFormer 實驗套件
 
 > **說明**：原始 `AMR_GateFusionFormer_v8_clean.ipynb`（64 cells）Productionization
+
 > 門控機制在數學上表現為一個信噪比相關的路由系統，在高信噪比條件下智能地優先使用頻率特徵（短時傅立葉變換，STFT），
 > 而在嚴重噪聲條件下則退而求其次使用結構保持特徵（短時差分/圖像質量，S-TD/IQ）。
 
