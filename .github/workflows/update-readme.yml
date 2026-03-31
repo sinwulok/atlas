@@ -57,10 +57,19 @@ jobs:
           python .github/scripts/generate_readme.py || { echo 'README generation failed'; exit 1; }
 
       - name: Commit updated README (if any)
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: github-actions
-          author_email: github-actions@github.com
-          message: 'chore: update project overview table [skip ci]'
-          add: 'README.md'
-          branch: main
+        run: |
+          # configure git author
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@github.com"
+
+          # check for changes and commit if any
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update project overview table [skip ci]"
+            # push back to the current branch:
+            BRANCH=${GITHUB_REF#refs/heads/}
+            git push origin HEAD:"${BRANCH}"
+            echo "Pushed changes to ${BRANCH}"
+          fi
