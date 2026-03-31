@@ -1,4 +1,4 @@
-# GatedFusionFormer NeuralNetwork 模組化套件
+# GatedFusionFormer NeuralNetwork
 
 > **說明**：原始 `AMR_GateFusionFormer_v8_clean.ipynb`（64 cells）Productionization
 
@@ -40,28 +40,25 @@ S-TD Stats (2, T)   → Conv1d Embedding
 ```
 amc-amr-gff-nn/
 ├── assets/
-│   ├── INDEX.md
-|   ...
 ├── src/
-│   ├── export.py
-│   ├── run.py
-│   ├── utils.py
+│   ├── __init__.py
+│   ├── run.py                 # CLI / subcommands entrypoint
+│   ├── export.py              # 模型匯出 / ONNX / TorchScript (選用)
+│   ├── utils.py               # 共用工具（IO、plotting、metrics）
 │   ├── configs/
-│   │   └── config.py
-│   ├── core/
-│   │   ├── __init__.py
+│   │   └── config.py          # 預設設定 / hyperparams
+│   ├── core/                  # 分析/實驗模組（evaluate, deep_analysis, ...）
 │   │   ├── dataset.py
-│   │   ├── 01_evaluate.py
-│   │   ├── 02_deep_analysis.py
-│   │   ├── 03_ablation.py
-│   │   ├── 04_gating_weights.py
-│   │   └── 05_cnn_vs_transformer.py
+│   │   ├── evaluate.py
+│   │   ├── deep_analysis.py
+│   │   ├── ablation.py
+│   │   ├── gating_weights.py
+│   │   └── cnn_vs_transformer.py
 │   └── models/
-│       ├── factory.py
-│       ├── cnn2.py
-│       ├── mod_rec_net.py
+│       ├── factory.py         # build_model(...)
 │       ├── model.py
-│       └── gff_nn.py
+│       ├── gff_nn.py
+│       └── cnn2.py / mod_rec_net.py
 ├── README.md
 ```
 
@@ -80,9 +77,8 @@ pip install torch torchvision timm scipy scikit-learn matplotlib seaborn tqdm pa
 所有腳本共用相同的兩個必填參數：
 
 | 參數 | 說明 |
-|---|---|
-| `--weights` | 訓練好的模型權重路徑 (`.pth`) |
-| `--data` | `RML2016.10a_dict.pkl` 資料集路徑 |
+  - `--weights` : 訓練後的 model weights 檔案（.pth） — 必填
+  - `--data`    : RML2016.10a_dict.pkl 的完整路徑 — 必填
 
 選用參數：
 
@@ -90,7 +86,7 @@ pip install torch torchvision timm scipy scikit-learn matplotlib seaborn tqdm pa
 |---|---|---|
 | `--batch-size` | 256 | 推理批次大小 |
 | `--output-dir` | `outputs` | 圖表儲存目錄 |
-
+  - `--device`  : `cpu` 或 `cuda`（預設自動偵測）
 ---
 
 ## 各實驗說明
@@ -98,7 +94,7 @@ pip install torch torchvision timm scipy scikit-learn matplotlib seaborn tqdm pa
 ### `evaluate.py` — 基礎模型評估
 
 ```bash
-python 01_evaluate.py --weights model.pth --data RML2016.10a_dict.pkl
+python src/run.py evaluate --weights path/to/model.pth --data path/to/RML2016.10a_dict.pkl --batch-size 256
 ```
 
 **輸出：**
@@ -111,7 +107,7 @@ python 01_evaluate.py --weights model.pth --data RML2016.10a_dict.pkl
 ### `deep_analysis.py` — 深度性能分析
 
 ```bash
-python 02_deep_analysis.py --weights model.pth --data RML2016.10a_dict.pkl
+python src/run.py deep_analysis --weights model.pth --data RML2016.10a_dict.pkl
 ```
 
 **輸出：**
@@ -124,7 +120,7 @@ python 02_deep_analysis.py --weights model.pth --data RML2016.10a_dict.pkl
 ### `ablation.py` — 模態消融實驗
 
 ```bash
-python 03_ablation.py --weights model.pth --data RML2016.10a_dict.pkl
+python src/run.py ablation --weights model.pth --data RML2016.10a_dict.pkl
 ```
 
 **輸出：**
@@ -137,7 +133,7 @@ python 03_ablation.py --weights model.pth --data RML2016.10a_dict.pkl
 ### `gating_weights.py` — 門控網絡權重分析
 
 ```bash
-python 04_gating_weights.py --weights model.pth --data RML2016.10a_dict.pkl
+python src/run.py gating --weights model.pth --data RML2016.10a_dict.pkl
 ```
 
 **輸出：**
@@ -148,9 +144,45 @@ python 04_gating_weights.py --weights model.pth --data RML2016.10a_dict.pkl
 ### `cnn_vs_transformer.py` — CNN vs Transformer 對比
 
 ```bash
-python 05_cnn_vs_transformer.py --weights model.pth --data RML2016.10a_dict.pkl
+python src/run.py compare --weights model.pth --data RML2016.10a_dict.pkl
 ```
 
 **輸出：**
 - `cnn_vs_transformer_accuracy.png` — 整體 Accuracy vs SNR 對比折線圖
 - `cnn_vs_transformer_overall.png` — 整體準確率柱狀圖
+
+（若 prefer module run）
+```bash
+python -m src.run evaluate --weights ... --data ...
+```
+
+## 輸出說明
+---
+- 所有圖表、可視化結果、CSV、與 logs 會儲存在 `--output-dir` 指定的目錄（預設 `outputs/`）。
+- 常見輸出檔例：
+  - `confusion_matrix_counts.png`
+  - `confusion_matrix_normalized.png`
+  - `accuracy_vs_snr.png`
+  - `per_class_accuracy_vs_snr.png`
+  - `tsne_visualization.png`
+  - `gating_weights_vs_snr.png`
+  - `ablation_*.png`
+  - `cnn_vs_transformer_accuracy.png`
+
+### 程式化呼叫（當作 library 使用）
+---
+如果你想在其他程式中直接使用模型或 pipeline，可以匯入 factory 與工具函式：
+```python
+from src.models.factory import build_model
+from src.core.dataset import RMLDataset
+from src.utils import load_weights, predict_batch
+
+# 建構模型
+model = build_model(name="gff_nn", num_classes=11)
+# 載入權重
+load_weights(model, "path/to/model.pth")
+# 資料/推理
+dataset = RMLDataset("path/to/RML2016.10a_dict.pkl", split="test")
+preds = predict_batch(model, dataset, device="cuda")
+```
+（上述 API 名稱為範例；請以實際 code 中的 function/class 名稱為準）
