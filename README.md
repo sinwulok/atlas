@@ -62,6 +62,8 @@ A collection of public demos, notebooks, templates, and experimental projects ac
 
 This repository acts as a lightweight monorepo for standalone demos. Each top-level folder is an independent project with its own purpose, stack, and documentation.
 
+<!-- START_PROJECT_OVERVIEW -->
+
 ## 專案總覽 | Project Overview
 
 | Path | 類型 | 簡介 |
@@ -86,3 +88,9 @@ This repository acts as a lightweight monorepo for standalone demos. Each top-le
 ├── machine-learning-applications-in-fmri/
 ├── r3f-portfolio/
 └── sw-single-page-cv-latex-templates/
+```
+
+<!-- END_PROJECT_OVERVIEW -->
+
+---
+
