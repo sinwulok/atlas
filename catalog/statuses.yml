@@ -1,0 +1,39 @@
+# statuses.yml
+# 專案生命週期狀態定義
+
+statuses:
+  incubation:
+    label: "孵化中 | Incubation"
+    description: "早期階段、實驗性質的專案，可能隨時變更或重構"
+    color: "yellow"
+    criteria:
+      - "專案處於早期開發階段"
+      - "API 或架構可能隨時變更"
+      - "尚未完成主要功能"
+      - "適合實驗與探索"
+
+  stable:
+    label: "穩定 | Stable"
+    description: "已完成主要功能、可供使用的專案"
+    color: "green"
+    criteria:
+      - "主要功能已完成"
+      - "可供使用或參考"
+      - "架構相對穩定"
+      - "有基本文件說明"
+
+  archived:
+    label: "已封存 | Archived"
+    description: "不再維護但保留作為參考的專案"
+    color: "gray"
+    criteria:
+      - "不再進行主動開發"
+      - "保留作為歷史參考"
+      - "可能使用過時的技術或方法"
+      - "建議參考其他替代專案"
+
+# 注意事項
+notes: |
+  專案生命週期狀態僅作為 metadata 標記，不建立為實體目錄。
+  所有狀態資訊儲存在 catalog/projects.yml 中。
+  專案的實際位置由其功能分類（Research/Development/Other）決定。

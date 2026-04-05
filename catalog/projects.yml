@@ -1,0 +1,100 @@
+# catalog/projects.yml
+# 專案索引與 metadata
+# 用途：機器可讀的專案索引，提供專案分類、狀態、標籤等資訊
+
+projects:
+  # Research 專案
+  ogb-bond-signal-anomaly:
+    path: Research/ogb-bond-signal-anomaly
+    category: Research
+    type: "Data Science / Forecasting"
+    description: "Forecasting / modeling demo related to weighted bond prediction."
+    lifecycle: stable
+    tags:
+      - data-science
+      - forecasting
+      - finance
+
+  machine-learning-applications-in-fmri:
+    path: Research/machine-learning-applications-in-fmri
+    category: Research
+    type: "Data Science / Research"
+    description: "Machine learning experiment or research demo focused on fMRI applications."
+    lifecycle: stable
+    tags:
+      - machine-learning
+      - fmri
+      - research
+
+  e-learning-fa-ipy:
+    path: Research/e-learning-fa-ipy
+    category: Research
+    type: "Data Science / Machine Learning"
+    description: "E-learning data analysis project using Jupyter notebooks, with preprocessing, modeling, and visualization."
+    lifecycle: stable
+    tags:
+      - data-science
+      - machine-learning
+      - jupyter
+      - education
+
+  # Development 專案
+  amc-amr-gff-nn:
+    path: Development/amc-amr-gff-nn
+    category: Development
+    type: "Machine Learning / Neural Network"
+    description: "AMC AMR GFF neural network project."
+    lifecycle: stable
+    tags:
+      - neural-network
+      - development
+
+  animated-gradient-text-starter:
+    path: Development/animated-gradient-text-starter
+    category: Development
+    type: "Frontend / UI Demo"
+    description: "Animated gradient text starter project built with Next.js, TypeScript, and Tailwind CSS."
+    lifecycle: stable
+    tags:
+      - frontend
+      - nextjs
+      - typescript
+      - ui
+
+  r3f-portfolio:
+    path: Development/r3f-portfolio
+    category: Development
+    type: "Frontend / Portfolio"
+    description: "React Three Fiber portfolio with 3D visuals, animations, and interactive sections."
+    lifecycle: stable
+    tags:
+      - frontend
+      - react
+      - three-fiber
+      - 3d
+      - portfolio
+
+  binance-multi-assets-singal-agent:
+    path: Development/binance-multi-assets-singal-agent
+    category: Development
+    type: "Quant / Trading"
+    description: "Multi-asset Binance trading signal agent / bot prototype with backend and frontend structure."
+    lifecycle: stable
+    tags:
+      - trading
+      - quant
+      - binance
+      - agent
+
+  # Other 專案
+  sw-single-page-cv-latex-templates:
+    path: Other/sw-single-page-cv-latex-templates
+    category: Other
+    type: "Templates / Utilities"
+    description: "LaTeX templates for single-page CV / resume documents."
+    lifecycle: stable
+    tags:
+      - latex
+      - template
+      - cv
+      - resume
