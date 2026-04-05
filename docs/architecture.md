@@ -7,14 +7,14 @@
 ## 目錄結構 | Directory Structure
 
 ```
-public-demos/
-├── Research/              # 研究型專案
-├── Development/           # 開發型專案
-├── Other/                 # 其他類型專案
-├── catalog/               # 專案索引與 metadata
-├── docs/                  # 治理文件
-├── .github/               # GitHub 設定與工作流程
-└── README.md              # Repository 主要說明文件
+workspace-atlas/
+├── Research/              # Research projects
+├── Development/           # Development projects
+├── Other/                 # Other types of projects
+├── catalog/               # Project index and metadata
+├── docs/                  # Governance documentation
+├── .github/               # GitHub configuration and workflows
+└── README.md              # Main repository documentation
 ```
 
 ## 目錄用途 | Directory Purposes
