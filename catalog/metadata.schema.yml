@@ -8,7 +8,7 @@ fields:
     type: string
     required: true
     description: "專案相對於 repository root 的路徑"
-    example: "Research/ogb-bond-signal-anomaly"
+    example: "Research/cnogb-bond-signal-anomaly"
 
   category:
     type: string
@@ -23,7 +23,7 @@ fields:
     type: string
     required: true
     description: "專案類型描述"
-    example: "Data Science / Forecasting"
+    example: "Transformer | Data Science | Machine Learning | Anomaly"
 
   description:
     type: string
