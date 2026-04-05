@@ -1,0 +1,46 @@
+# metadata.schema.yml
+# 專案 metadata 欄位定義
+
+# 本檔案定義 projects.yml 中各欄位的格式與用途
+
+fields:
+  path:
+    type: string
+    required: true
+    description: "專案相對於 repository root 的路徑"
+    example: "Research/ogb-bond-signal-anomaly"
+
+  category:
+    type: string
+    required: true
+    description: "專案分類"
+    allowed_values:
+      - Research
+      - Development
+      - Other
+
+  type:
+    type: string
+    required: true
+    description: "專案類型描述"
+    example: "Data Science / Forecasting"
+
+  description:
+    type: string
+    required: true
+    description: "專案簡介"
+
+  lifecycle:
+    type: string
+    required: true
+    description: "專案生命週期狀態"
+    allowed_values:
+      - incubation
+      - stable
+      - archived
+
+  tags:
+    type: array
+    required: false
+    description: "專案標籤列表"
+    item_type: string

@@ -1,0 +1,108 @@
+# tags.yml
+# 專案標籤定義與說明
+
+tags:
+  # 資料科學與研究
+  data-science:
+    category: "Data Science"
+    description: "資料科學相關專案"
+
+  machine-learning:
+    category: "Data Science"
+    description: "機器學習相關專案"
+
+  forecasting:
+    category: "Data Science"
+    description: "預測模型相關專案"
+
+  research:
+    category: "Data Science"
+    description: "學術研究性質專案"
+
+  # 領域特定
+  finance:
+    category: "Domain"
+    description: "金融相關專案"
+
+  fmri:
+    category: "Domain"
+    description: "功能性磁共振成像相關專案"
+
+  education:
+    category: "Domain"
+    description: "教育相關專案"
+
+  trading:
+    category: "Domain"
+    description: "交易相關專案"
+
+  quant:
+    category: "Domain"
+    description: "量化金融相關專案"
+
+  # 技術棧
+  neural-network:
+    category: "Technology"
+    description: "神經網路相關專案"
+
+  frontend:
+    category: "Technology"
+    description: "前端開發專案"
+
+  nextjs:
+    category: "Technology"
+    description: "使用 Next.js 框架的專案"
+
+  typescript:
+    category: "Technology"
+    description: "使用 TypeScript 的專案"
+
+  react:
+    category: "Technology"
+    description: "使用 React 的專案"
+
+  three-fiber:
+    category: "Technology"
+    description: "使用 React Three Fiber 的專案"
+
+  jupyter:
+    category: "Technology"
+    description: "使用 Jupyter Notebooks 的專案"
+
+  latex:
+    category: "Technology"
+    description: "使用 LaTeX 的專案"
+
+  # 專案類型
+  ui:
+    category: "Type"
+    description: "使用者介面相關專案"
+
+  3d:
+    category: "Type"
+    description: "3D 圖形相關專案"
+
+  portfolio:
+    category: "Type"
+    description: "作品集網站"
+
+  agent:
+    category: "Type"
+    description: "智能代理相關專案"
+
+  template:
+    category: "Type"
+    description: "模板專案"
+
+  cv:
+    category: "Type"
+    description: "履歷相關專案"
+
+  resume:
+    category: "Type"
+    description: "簡歷相關專案"
+
+  # 平台
+  binance:
+    category: "Platform"
+    description: "Binance 交易所相關專案"
