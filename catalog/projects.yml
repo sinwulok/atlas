@@ -7,7 +7,7 @@ projects:
   ogb-bond-signal-anomaly:
     path: Research/cnogb-bond-signal-anomaly
     category: Research
-    type: "Data Science / Forecasting"
+    type: "Transformer | Data Science | Anomaly Study | "
     description: "Forecasting / modeling demo related to weighted bond prediction."
     lifecycle: stable
     tags:
@@ -18,7 +18,7 @@ projects:
   machine-learning-applications-in-fmri:
     path: Research/machine-learning-applications-in-fmri
     category: Research
-    type: "Data Science / Research"
+    type: "Machine learning | Research"
     description: "Machine learning experiment or research demo focused on fMRI applications."
     lifecycle: stable
     tags:
@@ -29,7 +29,7 @@ projects:
   e-learning-fa-ipy:
     path: Research/e-learning-fa-ipy
     category: Research
-    type: "Data Science / Machine Learning"
+    type: "Data Science | Machine Learning"
     description: "E-learning data analysis project using Jupyter notebooks, with preprocessing, modeling, and visualization."
     lifecycle: stable
     tags:
@@ -42,7 +42,7 @@ projects:
   amc-amr-gff-nn:
     path: Development/amc-amr-gff-nn
     category: Development
-    type: "Machine Learning / Neural Network"
+    type: "Deep Learning | Neural Network"
     description: "AMC AMR GFF neural network project."
     lifecycle: stable
     tags:
@@ -77,7 +77,7 @@ projects:
   binance-multi-assets-singal-agent:
     path: Development/binance-multi-assets-singal-agent
     category: Development
-    type: "Quant / Trading"
+    type: "Quant | Singal | Feature Catch"
     description: "Multi-asset Binance trading signal agent / bot prototype with backend and frontend structure."
     lifecycle: stable
     tags:
@@ -90,8 +90,8 @@ projects:
   sw-single-page-cv-latex-templates:
     path: Other/sw-single-page-cv-latex-templates
     category: Other
-    type: "Templates / Utilities"
-    description: "LaTeX templates for single-page CV / resume documents."
+    type: "LaTeX | Utilities | Templates"
+    description: "LaTeX templates for single-page CV | resume documents."
     lifecycle: stable
     tags:
       - latex
