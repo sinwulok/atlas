@@ -1,72 +1,102 @@
-# Machine-Learning-Apppplications-in-fMRI
+# machine-learning-applications-in-fmri
 
-This repository showcases practical applications of machine learning techniques on functional MRI (fMRI) data using the Nilearn library. 
+Machine learning applications for functional MRI analysis and research.
 
-It includes hands-on exercises and example workflows such as CanICA, dictionary learning, and functional connectivity analysis, adapted from the official Nilearn documentation.
+---
 
-Please note: This project is intended solely for educational and personal study purposes. It is not for commercial use or distribution.
+## Overview
 
-## Research Workflow Diagrom
+This repository showcases practical applications of machine learning techniques on functional MRI (fMRI) data using the Nilearn library. It includes hands-on exercises and example workflows such as CanICA, dictionary learning, and functional connectivity analysis, adapted from the official Nilearn documentation.
 
+**Note**: This project is intended solely for educational and personal study purposes.
+
+---
+
+## Category / Lifecycle / Tags
+
+- **Category**: Research
+- **Type**: Machine Learning | fMRI
+- **Lifecycle**: stable
+- **Tags**: machine-learning, fmri, research
+
+---
+
+## Structure
+
+```
+Research/machine-learning-applications-in-fmri/
+├── assets/                 # Diagrams and result images
+├── notebooks/              # Jupyter notebooks
+└── README.md               # This file
+```
+
+---
+
+## How to Run
+
+1. Install dependencies:
+   ```bash
+   pip install nilearn scikit-learn numpy matplotlib
+   ```
+
+2. Run the Jupyter notebooks for fMRI analysis
+
+3. View results in the `assets/` directory
+
+---
+
+## Dependencies
+
+- Nilearn
+- Scikit-learn
+- NumPy
+- Matplotlib
+
+---
+
+## Outputs / Demos
+
+### Research Workflow Diagram
 ![Research Workflow Diagram](assets/machine-learning-on-fmri-research-workflow-diagram-v4.drawio.svg)
 
-## Research result of ROI
-
+### Research Result of ROI
 ![result_1](assets/images/group-icawithdictlearn-01.png)
 ![result_2](assets/images/group-icawithdictlearn-02.png)
 ![result_3](assets/images/group-icawithdictlearn-03.png)
 
-## Research result of compair
+### Research Result of Comparison
+![result_comparison_1](assets/images/compair_extrac.PNG)
 
-![result_comppair_1](assets/images/compair_extrac.PNG)
-
-## Research result of region
-
+### Research Result of Region
 ![result_region_1](assets/images/corr_regions_of_DtL.JPG)
 
-## Research result of visualization
-
+### Research Result of Visualization
 ![result_visualization_1](assets/images/connectome_2d.PNG)
 ![result_visualization_2](assets/images/connectome_3d.PNG)
 
-# Origin Source
+---
 
-Origin source coubld be found at nilearn website
-Which includes canICA or Dictionary learning and the functional connective
+## Notes / Limitations
 
-URL=https://nilearn.github.io/stable/auto_examples/index.html
+- For educational and personal study purposes only
+- Not for commercial use or distribution
+- Adapted from Nilearn documentation examples
 
-# Acknowladge
+---
+
+## Related Links
+
+- [Nilearn Official Documentation](https://nilearn.github.io/)
+- [Nilearn GitHub Repository](https://github.com/nilearn/nilearn/)
+- [Project Catalog](../../catalog/index.md)
+- [Repository Root](../../README.md)
+
+---
+
+## Acknowledgments
 
 Nilearn enables approachable and versatile analyses of brain volumes. It provides statistical and machine-learning tools, with instructive documentation & friendly community.
 
-It supports general linear model (GLM) based analysis and leverages the scikit-learn Python toolbox for multivariate statistics with applications such as predictive modeling, classification, decoding, or connectivity analysis.
+### Reference
 
-Important links
-
-Official source code repo: [https://github.com/nilearn/nilearn/](https://github.com/nilearn/nilearn/)  
-HTML documentation (stable release): [https://nilearn.github.io/](https://nilearn.github.io/)
-
-# For further information about nilearn
-
-## Machine learning for neuroimaging with scikit-learn
-
-**AUTHOR:** Abraham Alexandre, Pedregosa Fabian, Eickenberg Michael, Gervais Philippe, Mueller Andreas, Kossaifi Jean, Gramfort Alexandre, Thirion Bertrand, Varoquaux Gael
-
-### Title
-
-Machine Learning for Neuroimaging with scikit-learn
-
-### Source
-
-Journal: Frontiers in Neuroinformatics  
-Volume: 8  
-Year: 2014  
-Pages: 14  
-URL=[https://www.frontiersin.org/article/10.3389/fninf.2014.00014](https://www.frontiersin.org/article/10.3389/fninf.2014.00014)  
-DOI=[https://doi.org/10.3389/fninf.2014.00014](https://doi.org/10.3389/fninf.2014.00014)  
-ISSN: 1662-5196
-
-### Abstract
-
-Statistical machine learning methods are increasingly used for neuroimaging data analysis. Their main virtue is their ability to model high-dimensional datasets, such as multivariate analysis of activation images or resting-state time series. Supervised learning is typically employed in decoding or encoding settings to relate brain images to behavioral or clinical observations, whereas unsupervised learning can uncover hidden structures in sets of images (e.g., resting state functional MRI) or identify sub-populations in large cohorts. Through various functional neuroimaging applications, this paper illustrates how scikit-learn, a Python machine learning library, can be utilized to perform key analysis steps. Scikit-learn offers a comprehensive set of statistical learning algorithms, both supervised and unsupervised, making it a versatile tool for studying the brain.
+Abraham Alexandre, Pedregosa Fabian, Eickenberg Michael, Gervais Philippe, Mueller Andreas, Kossaifi Jean, Gramfort Alexandre, Thirion Bertrand, Varoquaux Gael (2014). "Machine Learning for Neuroimaging with scikit-learn". *Frontiers in Neuroinformatics*, Volume 8, Pages 14. DOI: [10.3389/fninf.2014.00014](https://doi.org/10.3389/fninf.2014.00014)
