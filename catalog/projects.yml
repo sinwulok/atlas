@@ -8,7 +8,7 @@ projects:
     path: Research/cnogb-bond-signal-anomaly
     category: Research
     type: "Transformer | Data Science | Anomaly"
-    description: "Forecasting | Anomaly and modeling related to weighted bond prediction."
+    description: "Forecasting | Anomaly and modeling related to weighted bond detection."
     lifecycle: stable
     tags:
       - data-science
