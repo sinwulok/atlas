@@ -1,0 +1,20 @@
+base_config: base.yaml
+
+model:
+  name: patchtst
+  d_model: 128
+  nhead: 4
+  num_layers: 3
+  dim_feedforward: 256
+  dropout: 0.1
+  patch_len: 8
+  stride: 4
+
+training:
+  sequence_length: 16
+  batch_size: 64
+  learning_rate: 0.001
+  num_epochs: 20
+
+evaluation:
+  mc_dropout_samples: 20

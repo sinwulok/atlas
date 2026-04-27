@@ -1,0 +1,121 @@
+# tags.yml
+# 專案標籤定義與說明 | Project tag definitions and descriptions
+
+tags:
+  # 資料科學與研究 | Data Science & Research
+  machine-learning:
+    category: Data Science
+    description: 機器學習專案。Machine learning projects.
+
+  deep-learning:
+    category: Data Science
+    description: 深度學習與神經網路。Deep learning and neural networks.
+
+  forecasting:
+    category: Data Science
+    description: 預測與預報模型。Forecasting and prediction models.
+
+  research:
+    category: Data Science
+    description: 學術研究專案。Academic research projects.
+
+  transformer:
+    category: Data Science
+    description: Transformer 模型。Transformer models.
+
+  anomaly:
+    category: Data Science
+    description: 異常偵測。Anomaly detection.
+
+  # 領域專屬 | Domain-Specific
+  finance:
+    category: Domain
+    description: 金融相關專案。Finance-related projects.
+
+  fmri:
+    category: Domain
+    description: 功能性 MRI 專案。Functional MRI projects.
+
+  education:
+    category: Domain
+    description: 教育相關專案。Education-related projects.
+
+  trading:
+    category: Domain
+    description: 交易與金融市場。Trading and financial markets.
+
+  quant:
+    category: Domain
+    description: 量化金融。Quantitative finance.
+
+  # 技術棧 | Technology Stack
+  neural-network:
+    category: Technology
+    description: 神經網路架構。Neural network architectures.
+
+  frontend:
+    category: Technology
+    description: 前端開發。Frontend development.
+
+  nextjs:
+    category: Technology
+    description: Next.js 框架。Next.js framework.
+
+  typescript:
+    category: Technology
+    description: TypeScript 語言。TypeScript language.
+
+  react:
+    category: Technology
+    description: React 函式庫。React library.
+
+  three-fiber:
+    category: Technology
+    description: React Three Fiber（3D 繪圖）。React Three Fiber (3D graphics).
+
+  jupyter:
+    category: Technology
+    description: Jupyter Notebook。Jupyter notebooks.
+
+  latex:
+    category: Technology
+    description: LaTeX 排版。LaTeX typesetting.
+
+  # 專案類型 | Project Types
+  ui:
+    category: Type
+    description: 使用者介面專案。User interface projects.
+
+  portfolio:
+    category: Type
+    description: 作品集網站。Portfolio websites.
+
+  agent:
+    category: Type
+    description: 智慧代理程式。Intelligent agents.
+
+  template:
+    category: Type
+    description: 模板專案。Template projects.
+
+  cv:
+    category: Type
+    description: CV / 履歷專案。CV/resume projects.
+
+  resume:
+    category: Type
+    description: 履歷文件。Resume documents.
+
+  # 平台與專屬技術 | Platforms & Specialized
+  binance:
+    category: Platform
+    description: Binance 交易所。Binance exchange.
+
+  automatic-modulation-recognition:
+    category: Platform
+    description: 自動調變識別系統。Automatic modulation recognition systems.
+
+  gated-fusion-former:
+    category: Platform
+    description: Gated Fusion Former 架構。Gated Fusion Former architecture.
+

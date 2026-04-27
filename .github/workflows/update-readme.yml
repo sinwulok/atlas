@@ -1,0 +1,75 @@
+name: Update README Project Overview # v4
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - '.github/workflows/update-readme.yml'
+      - '.github/scripts/**'
+      - 'README.md'
+  schedule:
+    - cron: '0 6 */3 * *'  # Runs every 3 days at 06:00 UTC / 每 3 天 UTC 06:00 執行一次
+  workflow_dispatch:
+
+concurrency:
+  group: update-readme-main
+  cancel-in-progress: true
+
+jobs:
+  generate-readme:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (full)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --requirement .github/scripts/requirements.txt
+
+      - name: Check Python Environment
+        run: |
+          python --version
+          pip list
+
+      - name: Run README generator
+        run: |
+          python .github/scripts/generate_readme.py || { echo 'README generation failed'; exit 1; }
+
+      - name: Commit updated README (if any)
+        run: |
+          # configure git author
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@github.com"
+
+          # check for changes and commit if any
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update project overview table [skip ci]"
+            # push back to the current branch:
+            BRANCH=${GITHUB_REF#refs/heads/}
+            git push origin HEAD:"${BRANCH}"
+            echo "Pushed changes to ${BRANCH}"
+          fi

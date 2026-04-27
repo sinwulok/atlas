@@ -1,0 +1,43 @@
+# statuses.yml
+# 專案生命週期狀態定義 | Project lifecycle status definitions
+
+statuses:
+  incubation:
+    label: Incubation（孵化中）
+    description: 早期階段、實驗性質的專案，可能隨時變更或重構。Early-stage, experimental projects that may change or be refactored at any time.
+    color: yellow
+    criteria:
+      - 專案處於早期開發階段。Project is in early development stage.
+      - API 或架構可能隨時變更。API or architecture may change at any time.
+      - 尚未完成主要功能。Main features not yet complete.
+      - 適合實驗與探索。Suitable for experimentation and exploration.
+
+  stable:
+    label: Stable（穩定）
+    description: 已完成主要功能、可供使用的專案。Completed main features, ready for use.
+    color: green
+    criteria:
+      - 主要功能已完成。Main features completed.
+      - 可供使用或參考。Available for use or reference.
+      - 架構相對穩定。Architecture relatively stable.
+      - 有基本文件說明。Basic documentation available.
+
+  archived:
+    label: Archived（已封存）
+    description: 不再維護但保留作為參考的專案。No longer maintained but preserved for reference.
+    color: gray
+    criteria:
+      - 不再進行主動開發。No longer actively developed.
+      - 保留作為歷史參考。Preserved for historical reference.
+      - 可能使用過時的技術或方法。May use outdated technologies or methods.
+      - 建議參考其他替代專案。Consider alternative projects.
+
+# 備註 | Notes
+notes: |
+  專案生命週期狀態為 metadata 標記，非實體目錄。
+  所有狀態資訊儲存於 catalog/projects.yml。
+  專案位置由其功能類別（Research/Development/Other）決定。
+  Project lifecycle statuses are metadata markers only, not physical directories.
+  All status information is stored in catalog/projects.yml.
+  Project locations are determined by their functional category (Research/Development/Other).
+

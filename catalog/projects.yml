@@ -1,0 +1,120 @@
+# catalog/projects.yml
+# Project index and metadata
+# Purpose: Machine-readable project index providing project categorization, status, and tags
+
+projects:
+  # Research Projects
+  cnogb-abnormal-intervention:
+    path: Research/cnogb-abnormal-intervention
+    category: Research
+    type: Transformer | Forecasting | Anomaly
+    description: Bond forecasting and anomaly detection using Transformer models with weighted feature extraction.
+    stack:
+      - jupyter-notebook
+      - python
+    lifecycle: stable
+    tags:
+      - transformer
+      - forecasting
+      - anomaly
+      - finance
+
+  cnpbb-abnormal-drift:
+    path: Research/cnpbb-abnormal-drift
+    category: Research
+    type: Transformer | Forecasting | Anomaly
+    description: Bond forecasting and anomaly detection using Transformer models with weighted feature extraction.
+    stack:
+      - jupyter-notebook
+      - python
+    lifecycle: stable
+    tags:
+      - transformer
+      - forecasting
+      - anomaly
+      - finance
+
+  machine-learning-applications-in-fmri:
+    path: Research/machine-learning-applications-in-fmri
+    category: Research
+    type: Machine Learning | fMRI
+    description: Machine learning applications for functional MRI analysis and research.
+    lifecycle: stable
+    tags:
+      - machine-learning
+      - fmri
+      - research
+
+  e-learning-fa-ipy:
+    path: Research/e-learning-fa-ipy
+    category: Research
+    type: Machine Learning | Functional Component Analysis
+    description: E-learning data analysis using Jupyter notebooks with preprocessing, modeling, and visualization.
+    lifecycle: stable
+    tags:
+      - machine-learning
+      - jupyter
+      - education
+
+  # Development Projects
+  amc-amr-gff-nn:
+    path: Development/amc-amr-gff-nn
+    category: Development
+    type: Deep Learning | Neural Network
+    description: AMC AMR Gated Fusion Former neural network for automatic modulation recognition.
+    lifecycle: stable
+    tags:
+      - deep-learning
+      - neural-network
+      - gated-fusion-former
+      - automatic-modulation-recognition
+
+  animated-gradient-text-starter:
+    path: Development/animated-gradient-text-starter
+    category: Development
+    type: Frontend | UI Demo
+    description: Animated gradient text starter project built with Next.js, TypeScript, and Tailwind CSS.
+    lifecycle: stable
+    tags:
+      - frontend
+      - nextjs
+      - typescript
+      - ui
+
+  r3f-portfolio:
+    path: Development/r3f-portfolio
+    category: Development
+    type: Frontend | R3F | Portfolio
+    description: React Three Fiber portfolio with 3D visuals, animations, and interactive sections.
+    lifecycle: stable
+    tags:
+      - frontend
+      - react
+      - three-fiber
+      - portfolio
+
+  binance-multi-assets-singal-agent:
+    path: Development/binance-multi-assets-singal-agent
+    category: Development
+    type: Quant | Signal | Feature Extraction
+    description: Multi-asset Binance trading signal agent prototype with backend and frontend structure.
+    lifecycle: stable
+    tags:
+      - trading
+      - quant
+      - binance
+      - agent
+
+  # Other Projects
+  sw-single-page-cv-latex-templates:
+    path: Other/sw-single-page-cv-latex-templates
+    category: Other
+    type: LaTeX | Utilities | Templates
+    description: LaTeX templates for single-page CV and resume documents.
+    lifecycle: stable
+    tags:
+      - latex
+      - cv
+      - resume
+      - template
+

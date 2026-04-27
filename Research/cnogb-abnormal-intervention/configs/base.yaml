@@ -1,0 +1,35 @@
+project: cnogb-abnormal-intervention
+seed: 42
+
+paths:
+  data_root: data
+  raw: data/raw
+  processed: data/processed
+  external: data/external
+  artifacts: artifacts
+  checkpoints: checkpoints
+  results: results
+
+data:
+  target_column: weighted_rate
+  time_column: date
+  train_suffix: _train
+  exam_suffix: _exam
+
+features:
+  numeric: []
+  categorical: []
+  derived: []
+
+training:
+  sequence_length: 16
+  batch_size: 64
+  num_epochs: 20
+  learning_rate: 0.001
+  device: cpu
+
+evaluation:
+  metrics:
+    - rmse
+    - r2
+  mc_dropout_samples: 20

@@ -1,0 +1,33 @@
+base_config: base.yaml
+
+data:
+  pair_name: ADBC_fc7
+  target_column: 目标值加权利率前2个工作日中债到期收益率BP
+  time_column: Comp1
+  derived_feature_columns:
+    - Comp2
+    - Comp3
+    - Comp4
+    - Comp5
+    - Comp6
+    - Comp7
+  categorical_columns: []
+
+model:
+  name: abnormal_transformer
+  d_model: 64
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 256
+  dropout: 0.1
+  window_size: 60
+
+training:
+  sequence_length: 60
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 100
+  device: cpu
+
+evaluation:
+  mc_dropout_samples: 20
