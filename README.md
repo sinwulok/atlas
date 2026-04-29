@@ -2,8 +2,8 @@
 
 ## 概述 | Overview
 
-本 repository 是一個經治理的專案生態系索引，整理 `research/`、`development/` 與 `other/` 三類專案，並附有一致的 catalog metadata 與治理文件。  
-This repository is a curated project ecosystem index that organizes `research/`, `development/`, and `other/` projects with consistent catalog metadata and governance documentation.
+本 repository 是一個經治理的專案生態系索引，目前以 `_research/` 與 `_development/` 兩個主目錄整理專案，並附有一致的 catalog metadata 與治理文件。  
+This repository is a curated project ecosystem index currently organized around the `_research/` and `_development/` top-level directories, with consistent catalog metadata and governance documentation.
 
 ---
 
@@ -11,9 +11,8 @@ This repository is a curated project ecosystem index that organizes `research/`,
 
 ```text
 workspace-atlas/
-├── research/              # 研究型專案 | Research projects
-├── development/           # 開發型專案 | Development projects
-├── other/                 # 其他類型專案 | Other types of projects
+├── _research/             # 研究型專案 | Research projects
+├── _development/          # 開發型專案 | Development projects
 ├── catalog/               # 專案索引與 metadata | Project index and metadata
 ├── docs/                  # 治理文件 | Governance documentation
 ├── .github/               # GitHub 設定與工作流程 | GitHub configuration and workflows
@@ -24,12 +23,10 @@ workspace-atlas/
 
 ## 專案分類 | Project Categories
 
-- **research/**：研究型專案，包含資料科學、機器學習、預測模型等內容。  
-  **research/**: Research-oriented projects such as data science, machine learning, and forecasting models.
-- **development/**：開發型專案，包含前端應用、交易系統與應用程式原型。  
-  **development/**: Development-oriented projects such as frontend applications, trading systems, and app prototypes.
-- **other/**：其他類型專案，包含模板、工具等內容。  
-  **other/**: Other types of projects such as templates and utilities.
+- **_research/**：研究型專案，包含資料科學、機器學習、預測模型等內容。  
+  **_research/**: Research-oriented projects such as data science, machine learning, and forecasting models.
+- **_development/**：開發型專案，包含前端應用、交易系統與應用程式原型。  
+  **_development/**: Development-oriented projects such as frontend applications, trading systems, and app prototypes.
 
 ---
 
@@ -41,45 +38,37 @@ For complete project listings and metadata, see:
 - [機器可讀 | Machine-readable](catalog/projects.yml)
 - [人類可讀 | Human-readable](catalog/index.md)
 
-### research/
+### _research/
 
 研究型專案，包含資料科學、機器學習、預測模型與學術實驗性質的內容。  
 Research projects including data science, machine learning, forecasting models, and academic or experimental work.
 
-- [cnogb-abnormal-intervention](research/cnogb-abnormal-intervention) — 使用 Transformer 模型進行債券預測與異常偵測。Bond forecasting and anomaly detection using Transformer models.
-- [cnpbb-abnormal-drift](research/cnpbb-abnormal-drift) — 使用 Transformer 模型進行債券預測與異常偵測。Bond forecasting and anomaly detection using Transformer models.
-- [machine-learning-applications-in-fmri](research/machine-learning-applications-in-fmri) — 功能性 MRI 資料的機器學習應用研究。Machine learning applications for fMRI analysis.
-- [e-learning-fa](research/e-learning-fa) — 使用 Python 腳本進行電子學習資料分析。E-learning data analysis using Python tooling.
+- [cnogb-abnormal-intervention](_research/cnogb-abnormal-intervention) — 使用 Transformer 模型進行債券預測與異常偵測。Bond forecasting and anomaly detection using Transformer models.
+- [machine-learning-applied-fmri](_research/machine-learning-applied-fmri) — 功能性 MRI 資料的機器學習應用研究。Machine learning applications for fMRI analysis.
+- [e-learning-fa](_research/e-learning-fa) — 使用 Python 腳本進行電子學習資料分析。E-learning data analysis using Python tooling.
 
-### development/
+### _development/
 
 開發型專案，包含前端應用、交易訊號偵測、神經網路與應用程式原型。  
 Development projects including frontend applications, trading signal detection, neural networks, and application prototypes.
 
-- [amc-amr-gff-nn](development/amc-amr-gff-nn) — AMC AMR Gated Fusion Former 自動調變識別神經網路。AMC AMR Gated Fusion Former neural network for automatic modulation recognition.
-- [animated-gradient-text-starter](development/animated-gradient-text-starter) — 動態漸層文字動畫入門專案（Next.js + TypeScript + Tailwind CSS）。Animated gradient text starter project built with Next.js, TypeScript, and Tailwind CSS.
-- [r3f-portfolio](development/r3f-portfolio) — React Three Fiber 3D 互動式作品集網站。React Three Fiber 3D portfolio website.
-- [binance-multi-assets-singal-agent](development/binance-multi-assets-singal-agent) — Binance 多資產交易訊號代理程式原型。Binance multi-asset trading signal agent prototype.
-
-### other/
-
-模板、工具與通用用途的其他專案。  
-Templates, tools, and utilities for general-purpose use.
-
-- [sw-single-page-cv-latex-templates](other/sw-single-page-cv-latex-templates) — 單頁 CV / 履歷的 LaTeX 模板。LaTeX templates for single-page CV and resume documents.
+- [amc-amr-gff-nn](_development/amc-amr-gff-nn) — AMC AMR Gated Fusion Former 自動調變識別神經網路。AMC AMR Gated Fusion Former neural network for automatic modulation recognition.
+- [animated-gradient-text-starter](_development/animated-gradient-text-starter) — 動態漸層文字動畫入門專案（Next.js + TypeScript + Tailwind CSS）。Animated gradient text starter project built with Next.js, TypeScript, and Tailwind CSS.
+- [r3f-portfolio](_development/r3f-portfolio) — React Three Fiber 3D 互動式作品集網站。React Three Fiber 3D portfolio website.
+- [binance-multi-assets-singal-agent](_development/binance-multi-assets-singal-agent) — Binance 多資產交易訊號代理程式原型。Binance multi-asset trading signal agent prototype.
 
 ---
 
 ## 快速開始 | Quickstart
 
-以下示例展示如何只取出單一子專案、安裝依賴並執行一個最小實驗（以 `research/cnogb-abnormal-intervention` 為例）。
+以下示例展示如何只取出單一子專案、安裝依賴並執行一個最小實驗（以 `_research/cnogb-abnormal-intervention` 為例）。
 
 1. 只 clone 並 sparse-checkout 單一資料夾：
 
 ```bash
 git clone --filter=blob:none --sparse https://github.com/sinwulok/workspace-atlas.git
 cd workspace-atlas
-git sparse-checkout set research/cnogb-abnormal-intervention
+git sparse-checkout set _research/cnogb-abnormal-intervention
 ```
 
 2. 建議建立虛擬環境並安裝依賴（以 pip 為例）：
@@ -87,13 +76,13 @@ git sparse-checkout set research/cnogb-abnormal-intervention
 ```bash
 python -m venv .venv
 source .venv/bin/activate    # 或 Windows: .venv\Scripts\activate
-pip install -r research/cnogb-abnormal-intervention/requirements.txt
+pip install -r _research/cnogb-abnormal-intervention/requirements.txt
 ```
 
 3. 執行該子專案的訓練 runner（示例）：
 
 ```bash
-python research/cnogb-abnormal-intervention/experiments/run_training.py --config research/cnogb-abnormal-intervention/configs/training.yaml
+python _research/cnogb-abnormal-intervention/experiments/run_training.py --config _research/cnogb-abnormal-intervention/configs/training.yaml
 ```
 
 說明：若該子專案尚未提供 `requirements.txt`，請參考其 `README.md` 或在根目錄 `requirements.txt` 中搜尋相依項目。
@@ -138,7 +127,7 @@ Repository governance documentation is located in the `docs/` directory:
 可依以下方式瀏覽專案：  
 Browse projects by:
 
-1. **類別 | Category**：前往 `research/`、`development/` 或 `other/` 目錄。Navigate to `research/`, `development/`, or `other/` directories.
+1. **類別 | Category**：前往 `_research/` 或 `_development/` 目錄。Navigate to `_research/` or `_development/` directories.
 2. **標籤 | Tags**：查閱 [catalog/tags.yml](catalog/tags.yml) 以進行主題篩選。Check for topic-based filtering.
 3. **生命週期 | Lifecycle**：查閱 [catalog/statuses.yml](catalog/statuses.yml) 以了解專案成熟度。See for project maturity levels.
 
@@ -162,7 +151,7 @@ cd workspace-atlas
 
 # 只取得所需資料夾（範例）
 # Fetch only the folder you need (example)
-git sparse-checkout set research/cnogb-abnormal-intervention
+git sparse-checkout set _research/cnogb-abnormal-intervention
 
 # 可選：切換分支
 # Optionally checkout another branch
@@ -175,7 +164,7 @@ git checkout <branch>
 Suitable for public GitHub repos, returns a plain folder without .git.
 
 ```bash
-svn export https://github.com/sinwulok/workspace-atlas/trunk/research/cnogb-abnormal-intervention
+svn export https://github.com/sinwulok/workspace-atlas/trunk/_research/cnogb-abnormal-intervention
 ```
 
 ### 方法三：下載 ZIP 並解壓縮 | Method 3: Download ZIP and extract specific folder
@@ -185,7 +174,7 @@ Download a snapshot of the entire repository (larger), then extract only the nee
 
 ```bash
 curl -L -o repo.zip https://github.com/sinwulok/workspace-atlas/archive/refs/heads/main.zip
-unzip repo.zip "workspace-atlas-main/research/cnogb-abnormal-intervention/*" -d extracted
+unzip repo.zip "workspace-atlas-main/_research/cnogb-abnormal-intervention/*" -d extracted
 ```
 
 ### 方法四：GitHub CLI | Method 4: GitHub CLI
@@ -193,7 +182,7 @@ unzip repo.zip "workspace-atlas-main/research/cnogb-abnormal-intervention/*" -d 
 ```bash
 gh repo clone sinwulok/workspace-atlas -- --filter=blob:none --sparse
 cd workspace-atlas
-git sparse-checkout set research/cnogb-abnormal-intervention
+git sparse-checkout set _research/cnogb-abnormal-intervention
 ```
 
 ---

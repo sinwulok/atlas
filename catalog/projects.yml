@@ -5,8 +5,8 @@
 projects:
   # Research Projects
   cnogb-abnormal-intervention:
-    path: Research/cnogb-abnormal-intervention
-    category: Research
+    path: _research/cnogb-abnormal-intervention
+    category: _research
     type: Transformer | Forecasting | Anomaly
     description: Bond forecasting and anomaly detection using Transformer models with weighted feature extraction.
     stack:
@@ -19,24 +19,9 @@ projects:
       - anomaly
       - finance
 
-  cnpbb-abnormal-drift:
-    path: Research/cnpbb-abnormal-drift
-    category: Research
-    type: Transformer | Forecasting | Anomaly
-    description: Bond forecasting and anomaly detection using Transformer models with weighted feature extraction.
-    stack:
-      - jupyter-notebook
-      - python
-    lifecycle: stable
-    tags:
-      - transformer
-      - forecasting
-      - anomaly
-      - finance
-
-  machine-learning-applications-in-fmri:
-    path: Research/machine-learning-applications-in-fmri
-    category: Research
+  machine-learning-applied-fmri:
+    path: _research/machine-learning-applied-fmri
+    category: _research
     type: Machine Learning | fMRI
     description: Machine learning applications for functional MRI analysis and research.
     lifecycle: stable
@@ -45,21 +30,21 @@ projects:
       - fmri
       - research
 
-  e-learning-fa-ipy:
-    path: Research/e-learning-fa-ipy
-    category: Research
+  e-learning-fa:
+    path: _research/e-learning-fa
+    category: _research
     type: Machine Learning | Functional Component Analysis
-    description: E-learning data analysis using Jupyter notebooks with preprocessing, modeling, and visualization.
+    description: E-learning data analysis using Python scripts with preprocessing, modeling, and visualization.
     lifecycle: stable
     tags:
       - machine-learning
-      - jupyter
       - education
+      - python
 
   # Development Projects
   amc-amr-gff-nn:
-    path: Development/amc-amr-gff-nn
-    category: Development
+    path: _development/amc-amr-gff-nn
+    category: _development
     type: Deep Learning | Neural Network
     description: AMC AMR Gated Fusion Former neural network for automatic modulation recognition.
     lifecycle: stable
@@ -70,8 +55,8 @@ projects:
       - automatic-modulation-recognition
 
   animated-gradient-text-starter:
-    path: Development/animated-gradient-text-starter
-    category: Development
+    path: _development/animated-gradient-text-starter
+    category: _development
     type: Frontend | UI Demo
     description: Animated gradient text starter project built with Next.js, TypeScript, and Tailwind CSS.
     lifecycle: stable
@@ -82,8 +67,8 @@ projects:
       - ui
 
   r3f-portfolio:
-    path: Development/r3f-portfolio
-    category: Development
+    path: _development/r3f-portfolio
+    category: _development
     type: Frontend | R3F | Portfolio
     description: React Three Fiber portfolio with 3D visuals, animations, and interactive sections.
     lifecycle: stable
@@ -94,8 +79,8 @@ projects:
       - portfolio
 
   binance-multi-assets-singal-agent:
-    path: Development/binance-multi-assets-singal-agent
-    category: Development
+    path: _development/binance-multi-assets-singal-agent
+    category: _development
     type: Quant | Signal | Feature Extraction
     description: Multi-asset Binance trading signal agent prototype with backend and frontend structure.
     lifecycle: stable
@@ -104,17 +89,4 @@ projects:
       - quant
       - binance
       - agent
-
-  # Other Projects
-  sw-single-page-cv-latex-templates:
-    path: Other/sw-single-page-cv-latex-templates
-    category: Other
-    type: LaTeX | Utilities | Templates
-    description: LaTeX templates for single-page CV and resume documents.
-    lifecycle: stable
-    tags:
-      - latex
-      - cv
-      - resume
-      - template
 
