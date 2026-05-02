@@ -1,117 +1,121 @@
 # binance-multi-assets-singal-agent
 
-Binance 多資產交易訊號代理程式原型，包含後端與前端架構。  
-Multi-asset Binance trading signal agent prototype with backend and frontend structure.
+Binance multi-asset signal agent prototype extracted from a research notebook into a small Python project with a layered `src/` application layout.
 
----
+## Overview
 
-## 概述 | Overview
+This project now has two implementation surfaces:
 
-一個多資產加密貨幣交易機器人，使用 MACD 等技術指標在 Binance 上自動執行交易邏輯。機器人獲取歷史資料、套用交易策略，並在 Binance Testnet 上模擬或執行交易。  
-A multi-asset crypto trading bot that uses technical indicators such as MACD to automate trading on Binance. This bot fetches historical data, applies trading logic, and simulates or executes trades on the Binance Testnet.
+- Application code under `src/`, split by responsibility into `app/`, `config/`, `data/`, `execution/`, `signals/`, and `market/`.
+- `binance_testnet_crpyto_v4.ipynb`: the original exploratory notebook retained for reference.
 
----
+The strategy matches the notebook prototype: fetch recent 1-minute klines, calculate MACD plus 30-minute percentage change, then produce buy or sell signals per asset. The command-line runner defaults to dry-run mode so the extracted code can be exercised without placing orders.
 
-## 類別與狀態 | Category and Lifecycle
-
-- **類別 | Category**：Development
-- **類型 | Type**：Quant | Signal | Feature Extraction
-- **生命週期 | Lifecycle**：stable
-- **標籤 | Tags**：trading, quant, binance, agent
-
----
-
-## 結構 | Structure
+## Structure
 
 ```text
-Development/binance-multi-assets-singal-agent/
-├── backend/                  # Python FastAPI 專案 | Python FastAPI project
+binance-multi-assets-singal-agent/
+├── run.py                   # Thin CLI wrapper
+├── config/                  # Optional config files / future YAML defaults
+├── public/                  # Static charts and exported assets
+├── src/
 │   ├── app/
-│   │   ├── api/              # API 端點 | API endpoints
-│   │   │   ├── endpoints/
-│   │   │   │   └── bot_control.py  # 控制機器人啟動/停止/狀態的 API
-│   │   │   └── websocket.py        # WebSocket 即時通訊端點
-│   │   ├── core/
-│   │   │   └── config.py           # 讀取 API 金鑰和設定
-│   │   ├── services/
-│   │   │   ├── binance_service.py  # 封裝幣安 API 互動（OOP）
-│   │   │   ├── indicator_service.py # 技術指標計算（MACD 等）
-│   │   │   └── trading_bot.py      # 核心交易機器人邏輯（OOP Class）
-│   │   └── main.py                 # FastAPI 應用程式進入點
-│   ├── .env                        # API 金鑰（請勿上傳至 Git）
-│   └── requirements.txt
-├── frontend/                 # React 專案 | React project
-│   ├── src/
-│   │   ├── api/
-│   │   │   └── botApi.js           # 呼叫後端 API 的函式
-│   │   ├── components/
-│   │   │   ├── BotController.js    # 開始/停止按鈕元件
-│   │   │   ├── Dashboard.js        # 主儀表板
-│   │   │   ├── LogStream.js        # 即時日誌元件
-│   │   │   └── AssetStatus.js      # 各資產狀態元件
-│   │   ├── hooks/
-│   │   │   └── useWebSocket.js     # WebSocket 連線自訂 hook
-│   │   ├── App.js
-│   │   └── index.js
-│   └── package.json
-└── README.md
+│   │   ├── main.py          # Main CLI implementation
+│   │   └── runner.py        # Trading loop orchestration
+│   ├── config/
+│   │   └── defaults.py      # Default runtime settings
+│   ├── data/
+│   │   ├── asset_loader.py  # Asset-state assembly
+│   │   ├── asset_sources.py # CSV/TXT asset-source readers
+│   │   └── default_assets.py # Built-in fallback asset basket
+│   ├── execution/
+│   │   ├── binance_client.py # Binance client factory and credential checks
+│   │   └── order_service.py # Live/dry-run order submission
+│   ├── models.py            # Runtime and strategy data models
+│   ├── types.py             # Binance client protocol typing
+│   ├── signals/
+│   │   ├── indicators.py    # MACD and indicator calculation
+│   │   └── macd_strategy.py # Latest-signal evaluation
+│   └── market/
+│       ├── constants.py     # Raw kline schema
+│       ├── klines.py        # Binance kline fetching
+│       └── transformers.py  # DataFrame normalization
+├── binance_testnet_crpyto_v4.ipynb
+├── requirements.txt
+└── setup.py
 ```
 
----
+## How To Run
 
-## 如何執行 | How to Run
+1. Install dependencies:
 
-1. 安裝相依套件 | Install required packages:
    ```sh
    pip install -r requirements.txt
    ```
 
-2. 在 `.env` 檔案中設定 Binance API 金鑰 | Configure Binance API keys in `.env`:
-   ```
+2. Create a `.env` file if you want authenticated requests or live orders:
+
+   ```env
    BINANCE_API_KEY=your_api_key
    BINANCE_API_SECRET=your_api_secret
    ```
 
-3. 執行交易機器人 | Run the trading bot:
+3. Run one dry-run iteration against testnet data:
+
    ```sh
-   python -m main_agent
+   python run.py --iterations 1
    ```
 
-4. 依照提示輸入 API 資訊並設定資產。  
-   Follow the prompts to enter your API information and configure your assets.
+4. Or run the application module directly:
 
----
+   ```sh
+   python -m src.app.main --iterations 1
+   ```
 
-## 相依項目 | Dependencies
+5. Only enable order placement when you explicitly want it:
 
-- Python FastAPI（後端 | backend）
-- React（前端 | frontend）
-- python-binance
-- pandas、MACD 指標函式庫
+   ```sh
+   python -m src.app.main --live --iterations 0
+   ```
 
----
+## Asset Inputs
 
-## 輸出與展示 | Outputs and Demos
+If `src/data/assets.csv` or `src/data/assets.txt` is empty, the runner falls back to the notebook's default basket:
 
-### MACD 指標圖 | MACD Indicator Chart
-![MACD 指標圖](pubclic/assets/macd-of-closing.png)
+- BTC
+- LTC
+- TRX
+- ETH
+- BNB
+- XRP
 
-### BTCUSDT 收盤價與訊號 | BTCUSDT Closing Price with Signals
-![BTCUSDT Closing Price with Signals](pubclic/assets/BTCUSDT-closing-price-with-signals.png)
+CSV supports `asset`, `order_size`, and `is_long` columns. TXT supports lines like:
 
----
+```text
+BTC,0.0025,false
+ETH,0.03,true
+```
 
-## 注意事項 | Notes and Limitations
+## Architecture Notes
 
-- 本專案為交易機器人原型，請勿在真實帳戶中直接使用。This is a trading bot prototype; do not use directly with real accounts.
-- 需要有效的 Binance API 金鑰，測試建議使用 Binance Testnet。Requires valid Binance API keys; use Binance Testnet for testing.
-- `.env` 檔案含有 API 金鑰，請勿上傳至 Git。The `.env` file contains API keys — do not commit to Git.
-- 可從 `.csv` 或 `.txt` 檔案匯入資產清單。Option to import asset data from .csv or .txt files.
+- `src/config/` holds runtime defaults.
+- `src/data/` handles asset definitions and input parsing, plus the default asset lists.
+- `src/execution/` isolates exchange client creation and order submission.
+- `src/signals/` holds indicator calculation and signal evaluation.
+- `src/app/` coordinates the CLI and trading loop.
+- `public/` stores exported charts and notebook-generated static assets.
+- Typical public-safe files include `favicon`, `robots.txt`, `site.webmanifest`, preview images, downloadable example files, and other intentionally public static assets.
 
----
+## Notes
 
-## 相關連結 | Related Links
+- Dry-run is the default. Without `--live`, the runner logs intended orders instead of submitting them.
+- `numpy<2` is pinned because the notebook workflow already showed compatibility issues around the indicator stack.
+- The notebook remains useful for charts and exploratory work, but the extracted project structure is the intended execution path.
+- `setup.py` is for packaging and installation metadata, not for launching the app.
+- `run.py` is the conventional lightweight entrypoint if you prefer a repo-local launcher.
+
+## Related Links
 
 - [Binance API (python-binance)](https://github.com/sammchardy/python-binance)
-- [專案 Catalog | Project Catalog](../../catalog/index.md)
-- [Repository 根目錄 | Repository Root](../../README.md)
+- [Project Catalog](../../catalog/index.md)
+- [Repository Root](../../README.md)

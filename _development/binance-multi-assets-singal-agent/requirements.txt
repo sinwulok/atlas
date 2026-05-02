@@ -1,9 +1,5 @@
-fastapi
-uvicorn[standard]
 python-binance
 pandas
 pandas-ta
-numpy==2.4.4
+numpy<2
 python-dotenv
-websockets
-python-multipart 

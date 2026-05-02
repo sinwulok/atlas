@@ -1,0 +1,7 @@
+asset,order_size,is_long
+BTC,0.0025,false
+LTC,100,false
+TRX,1000,false
+ETH,0.03,false
+BNB,0.25,false
+XRP,100,false

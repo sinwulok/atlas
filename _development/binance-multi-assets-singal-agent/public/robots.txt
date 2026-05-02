@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+
+# If you want to allow only specific public files later, add explicit Allow rules here.
+# Example:
+# Allow: /favicon.svg
+# Allow: /site.webmanifest
